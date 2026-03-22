@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Center17 — Advancing Psychiatric Interventions</title>
+  <meta name="description" content="Center17: open-source software for advancing psychiatric interventions through computational neuroscience, active inference, and neuroimaging.">
+  <style>
+    @font-face {
+      font-family: 'System';
+      src: local('Iosevka'), local('PragmataPro'), local('IBM Plex Mono'), local('SF Mono'), local('Menlo'), local('Consolas');
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #111111;
+      color: #d4d4d4;
+      font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+      font-size: 17px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+      background: #c8102e;
+      color: #fff;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid #555;
+      transition: border-color 0.15s;
+    }
+
+    a:hover { border-bottom-color: #c8102e; }
+
+    /* Layout: asymmetric two-column inspired by research posters */
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 40px 80px;
+    }
+
+    /* Masthead */
+    .masthead {
+      padding-bottom: 48px;
+      border-bottom: 3px solid #d4d4d4;
+      margin-bottom: 56px;
+    }
+
+    .masthead h1 {
+      font-family: 'System', 'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
+      font-size: 3.2rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .masthead h1 .num {
+      font-weight: 700;
+      color: #c8102e;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      font-style: italic;
+      color: #888;
+      max-width: 420px;
+    }
+
+/* Section headings — rotated margin labels */
+    .section {
+      position: relative;
+      margin-bottom: 56px;
+      padding-left: 48px;
+    }
+
+    .section-label {
+      position: absolute;
+      left: -8px;
+      top: 0;
+      font-family: 'System', 'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #999;
+      writing-mode: vertical-lr;
+      transform: rotate(180deg);
+      white-space: nowrap;
+    }
+
+    .section-rule {
+      width: 100%;
+      height: 1px;
+      background: #333;
+      margin-bottom: 28px;
+    }
+
+    /* Category headers */
+    .category {
+      margin-bottom: 40px;
+    }
+
+    .category h3 {
+      font-family: 'System', 'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
+      font-size: 0.78rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #888;
+      margin-bottom: 16px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #333;
+    }
+
+    /* Project entries — tabular/index style, not cards */
+    .project {
+      display: grid;
+      grid-template-columns: 140px 1fr 70px;
+      gap: 16px;
+      padding: 10px 0;
+      border-bottom: 1px dotted #2a2a2a;
+      align-items: baseline;
+      text-decoration: none;
+    }
+
+    .project:last-child { border-bottom: none; }
+
+    .project:hover .project-name { color: #c8102e; }
+
+    .project-name {
+      font-family: 'System', 'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
+      font-size: 0.88rem;
+      font-weight: 700;
+      transition: color 0.15s;
+    }
+
+    .project-desc {
+      font-size: 0.88rem;
+      color: #888;
+    }
+
+    .project-lang {
+      font-family: 'System', 'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
+      font-size: 0.7rem;
+      color: #999;
+      text-align: right;
+    }
+
+/* Footer */
+    footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 3px solid #d4d4d4;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.78rem;
+      color: #999;
+    }
+
+    footer nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    footer nav a {
+      font-family: 'System', 'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #888;
+      border-bottom: none;
+    }
+
+    footer nav a:hover { color: #c8102e; }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .page { padding: 32px 20px 48px; }
+
+      .masthead {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .masthead h1 { font-size: 2.2rem; }
+
+      .section { padding-left: 0; }
+
+      .section-label {
+        position: static;
+        writing-mode: horizontal-tb;
+        transform: none;
+        margin-bottom: 12px;
+        display: block;
+      }
+
+      .project {
+        grid-template-columns: 1fr;
+        gap: 2px;
+        padding: 12px 0;
+      }
+
+      .project-lang { text-align: left; }
+
+      footer { flex-direction: column; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+  <header class="masthead">
+    <div>
+      <h1>Center<span class="num">17</span></h1>
+      <p class="subtitle">Advancing psychiatric interventions through open-source computational neuroscience and active inference.</p>
+    </div>
+  </header>
+
+  <div class="section">
+    <span class="section-label">Presentations</span>
+    <div class="section-rule"></div>
+
+    <div class="category">
+      <a class="project" href="https://github.com/m9h/neurosim">
+        <span class="project-name">neurosim</span>
+        <span class="project-desc">Weekly updated presentation of the Center17 agentic software production pipeline</span>
+        <span class="project-lang">TeX</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="section">
+    <span class="section-label">Software</span>
+    <div class="section-rule"></div>
+
+    <div class="category">
+      <h3>Active Inference</h3>
+      <a class="project" href="https://github.com/m9h/alf">
+        <span class="project-name">alf</span>
+        <span class="project-desc">JAX-native active inference for discrete POMDPs</span>
+        <span class="project-lang">Python</span>
+      </a>
+      <a class="project" href="https://github.com/m9h/spinning-up-alf">
+        <span class="project-name">spinning-up-alf</span>
+        <span class="project-desc">16-module curriculum bridging RL and active inference</span>
+        <span class="project-lang">Jupyter</span>
+      </a>
+      <a class="project" href="https://github.com/m9h/agentsciml">
+        <span class="project-name">agentsciml</span>
+        <span class="project-desc">Multi-agent evolutionary framework for automated scientific machine learning discovery</span>
+        <span class="project-lang">Python</span>
+      </a>
+    </div>
+
+    <div class="category">
+      <h3>Bioengineered Intelligence</h3>
+      <a class="project" href="https://github.com/m9h/bl1">
+        <span class="project-name">bl1</span>
+        <span class="project-desc">In-silico cortical culture simulator with STDP, virtual MEA, closed-loop experiments</span>
+        <span class="project-lang">Python</span>
+      </a>
+      <a class="project" href="https://github.com/m9h/devograph">
+        <span class="project-name">devograph</span>
+        <span class="project-desc">Developmental neurobiology: dynamics, geometric convolutions, optimal transport</span>
+        <span class="project-lang">Python</span>
+      </a>
+      <a class="project" href="https://github.com/m9h/organoid-hgx-benchmark">
+        <span class="project-name">organoid-hgx-benchmark</span>
+        <span class="project-desc">Hypergraph deep learning on cerebral organoid gene regulatory networks</span>
+        <span class="project-lang">Python</span>
+      </a>
+    </div>
+
+    <div class="category">
+      <h3>Neuroimaging</h3>
+      <a class="project" href="https://github.com/m9h/neurojax">
+        <span class="project-name">neurojax</span>
+        <span class="project-desc">JAX-accelerated electrophysiology analysis with MNE, Diffrax, osl-dynamics</span>
+        <span class="project-lang">Python</span>
+      </a>
+      <a class="project" href="https://github.com/m9h/dmijl">
+        <span class="project-name">dmijl</span>
+        <span class="project-desc">Score-based dMRI microstructure estimation with SciML and Lux.jl</span>
+        <span class="project-lang">Julia</span>
+      </a>
+      <a class="project" href="https://github.com/m9h/dmipy">
+        <span class="project-name">dmipy-jax</span>
+        <span class="project-desc">JAX port of the dMRI microstructure estimation toolbox</span>
+        <span class="project-lang">Python</span>
+      </a>
+      <a class="project" href="https://github.com/m9h/Fijee-Project">
+        <span class="project-name">Fijee</span>
+        <span class="project-desc">Forward inverse electroencephalogram software, building a new forward solution</span>
+        <span class="project-lang">C++</span>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <span class="section-label">Contributions</span>
+    <div class="section-rule"></div>
+
+    <div class="category">
+      <h3>NeuroFedora</h3>
+      <a class="project" href="https://github.com/m9h/neurofedora-species">
+        <span class="project-name">neurofedora</span>
+        <span class="project-desc">NeuroFedora computational neuroscience platform packaging and integration</span>
+        <span class="project-lang"></span>
+      </a>
+    </div>
+
+    <div class="category">
+      <h3>JAX Ecosystem</h3>
+      <a class="project" href="https://github.com/m9h/hgx">
+        <span class="project-name">hgx</span>
+        <span class="project-desc">Hypergraph neural networks in JAX/Equinox for higher-order topological deep learning</span>
+        <span class="project-lang">Python</span>
+      </a>
+      <a class="project" href="https://github.com/m9h/jaxctrl">
+        <span class="project-name">jaxctrl</span>
+        <span class="project-desc">Differentiable control theory: Lyapunov, Riccati, Gramians, hypergraph controllability</span>
+        <span class="project-lang">Python</span>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <span>&copy; 2026 Center17</span>
+    <nav>
+      <a href="https://github.com/m9h">GitHub</a>
+      <a href="https://center17.ghost.io">Writing</a>
+      <a href="https://twitter.com/mhough">Contact</a>
+    </nav>
+  </footer>
+</div>
+
+</body>
+</html>
