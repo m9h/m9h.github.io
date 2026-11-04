@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Center17 — Advancing Psychiatric Interventions</title>
-  <meta name="description" content="Center17: open-source software for advancing psychiatric interventions through computational neuroscience, active inference, and neuroimaging.">
+  <title>Center17 — demi-human cybernetics</title>
+  <meta name="description" content="Center17, demi-human cybernetics: open-source software for advancing psychiatric interventions through computational neuroscience, active inference, and neuroimaging.">
   <style>
     @font-face {
       font-family: 'System';
@@ -62,6 +62,12 @@
     .masthead h1 .num {
       font-weight: 700;
       color: #c8102e;
+    }
+
+    .tagline {
+      font-family: 'System', 'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
+      font-size: 0.95rem; letter-spacing: 0.12em; text-transform: lowercase;
+      color: #d4d4d4; margin: -6px 0 14px;
     }
 
     .subtitle {
@@ -179,6 +185,78 @@
 
     footer nav a:hover { color: #c8102e; }
 
+
+    /* Top navigation: the 2017 center17.org menu, reused as in-page anchors */
+    .topnav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(17,17,17,0.94); backdrop-filter: blur(6px);
+      border-bottom: 1px solid #2a2a2a;
+    }
+    .topnav .inner {
+      max-width: 1100px; margin: 0 auto; padding: 14px 40px;
+      display: flex; align-items: baseline; gap: 28px;
+      font-family: 'System', 'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
+      font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.14em;
+    }
+    .topnav a { border-bottom: none; color: #999; }
+    .topnav a:hover, .topnav a.current { color: #d4d4d4; }
+    .topnav .brand { color: #d4d4d4; letter-spacing: 0.08em; margin-right: 12px; }
+    .topnav .brand b { color: #c8102e; font-weight: 700; }
+    .topnav .ext { margin-left: auto; }
+    .topnav .ext::after { content: " \2197"; }
+
+    .page { padding-top: 48px; }
+    .masthead { display: grid; grid-template-columns: 1fr 320px; gap: 40px; align-items: end; }
+    .masthead .now {
+      font-family: 'System', 'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
+      font-size: 0.74rem; line-height: 1.9; color: #888;
+    }
+    .masthead .now dt { text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.62rem; color: #666; margin-top: 8px; }
+    .masthead .now dd { margin: 0; }
+    .masthead .now a { color: #bbb; }
+
+    /* Big section heads (Code / Data / Text / Models / WeFunk) */
+    .section { scroll-margin-top: 72px; }
+    .section h2 {
+      font-family: 'System', 'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
+      font-size: 1.6rem; font-weight: 400; letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+    .section h2 .idx { color: #c8102e; font-weight: 700; margin-right: 10px; font-size: 1rem; vertical-align: 0.15em; }
+    .section .lede { font-style: italic; color: #888; max-width: 640px; margin-bottom: 24px; font-size: 0.98rem; }
+    .section .lede a { color: #bbb; }
+
+    /* Shelves: curated lists for Data / Text / Models (same grammar as .project) */
+    .shelf { display: grid; grid-template-columns: 210px 1fr 70px; gap: 16px; padding: 10px 0;
+             border-bottom: 1px dotted #2a2a2a; align-items: baseline; }
+    .shelf:last-child { border-bottom: none; }
+    .shelf:hover .shelf-name { color: #c8102e; }
+    .shelf-name { font-family: 'System', 'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
+                  font-size: 0.88rem; font-weight: 700; overflow-wrap: anywhere; transition: color .15s; }
+    .shelf-desc { font-size: 0.88rem; color: #888; }
+    .shelf-kind { font-family: 'System', 'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
+                  font-size: 0.7rem; color: #999; text-align: right; white-space: nowrap; }
+    .was { font-family: 'System', 'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
+           font-size: 0.66rem; color: #666; text-transform: uppercase; letter-spacing: 0.12em; margin: -14px 0 24px; }
+    .was a { color: #777; }
+
+    /* Sub-sections inside Code keep the rotated margin labels */
+    .sub { position: relative; padding-left: 0; margin-bottom: 48px; }
+    .sub .section-label { left: -56px; }
+
+    .colophon { font-size: 0.92rem; color: #888; max-width: 640px; }
+    .colophon a { color: #bbb; }
+    .colophon p + p { margin-top: 12px; }
+
+    @media (max-width: 700px) {
+      .topnav .inner { padding: 12px 20px; gap: 16px; flex-wrap: wrap; }
+      .topnav .ext { margin-left: 0; }
+      .masthead { grid-template-columns: 1fr; }
+      .shelf { grid-template-columns: 1fr; gap: 4px; }
+      .shelf-kind { text-align: left; }
+      .sub .section-label { position: static; }
+    }
+
     /* Responsive */
     @media (max-width: 700px) {
       .page { padding: 32px 20px 48px; }
@@ -212,37 +290,39 @@
     }
   </style>
 </head>
-<body>
+<body id="top">
+
+<nav class="topnav"><div class="inner">
+  <a class="brand" href="#top">Center<b>17</b></a>
+  <a href="#code">Code</a>
+  <a href="#data">Data</a>
+  <a href="#text">Text</a>
+  <a href="#models">Models</a>
+  <a href="#wefunk">WeFunk</a>
+  <a class="ext" href="https://center17.org/">Blog</a>
+</div></nav>
 
 <div class="page">
   <header class="masthead">
     <div>
       <h1>Center<span class="num">17</span></h1>
+      <p class="tagline">demi-human cybernetics</p>
       <p class="subtitle">Advancing psychiatric interventions through open-source computational neuroscience and active inference.</p>
     </div>
+    <dl class="now">
+      <dt>Blog</dt><dd><a href="https://center17.org/">center17.org</a> &middot; <a href="https://center17.org/rss/">RSS</a></dd>
+      <dt>For students</dt><dd><a href="https://center17.org/blogroll/">Blogroll</a> &middot; <a href="https://github.com/m9h/spinning-up-in-pde">Spinning up in PDE</a></dd>
+      <dt>Elsewhere</dt><dd><a href="https://github.com/m9h">GitHub</a> &middot; <a href="https://huggingface.co/mhough">Hugging Face</a> &middot; <a href="https://bsky.app/profile/mhough.bsky.social">Bluesky</a></dd>
+    </dl>
   </header>
 
-  <div class="section">
-    <span class="section-label">Presentations</span>
+  <div class="section" id="code">
+    <h2><span class="idx">01</span>Code</h2>
+    <p class="lede">Source for everything Center17 builds: differentiable neuroimaging and stimulation physics in JAX, active-inference agents, open hardware, and the packaging that makes it installable. Grouped by programme; each row is a repository.</p>
+    <p class="was">In 2017 this pointed at center17.github.io. Now: <a href="https://github.com/m9h">github.com/m9h</a></p>
     <div class="section-rule"></div>
-
-    <div class="category">
-      <a class="project" href="https://github.com/m9h/neurosim">
-        <span class="project-name">neurosim</span>
-        <span class="project-desc">JAX-native software stack for cognitive agent simulation: project overview and presentations</span>
-        <span class="project-lang">TeX</span>
-      </a>
-      <a class="project" href="https://github.com/m9h/neurotechx-presentations">
-        <span class="project-name">neurotechx-presentations</span>
-        <span class="project-desc">Reusable NeuroTechX-inspired Beamer theme and presentation drafts</span>
-        <span class="project-lang">TeX</span>
-      </a>
-    </div>
-  </div>
-
-  <div class="section">
-    <span class="section-label">Software</span>
-    <div class="section-rule"></div>
+    <div class="sub">
+      <span class="section-label">Software</span>
 
     <div class="category">
       <h3>Active Inference</h3>
@@ -435,11 +515,9 @@
         <span class="project-lang">Python</span>
       </a>
     </div>
-  </div>
-
-  <div class="section">
-    <span class="section-label">Curricula</span>
-    <div class="section-rule"></div>
+    </div>
+    <div class="sub">
+      <span class="section-label">Curricula</span>
 
     <div class="category">
       <a class="project" href="https://github.com/m9h/spinning-up-alf">
@@ -463,11 +541,9 @@
         <span class="project-lang">Python</span>
       </a>
     </div>
-  </div>
-
-  <div class="section">
-    <span class="section-label">Contributions</span>
-    <div class="section-rule"></div>
+    </div>
+    <div class="sub">
+      <span class="section-label">Contributions</span>
 
     <div class="category">
       <h3>NeuroFedora &amp; Packaging</h3>
@@ -525,11 +601,9 @@
         <span class="project-lang">Python</span>
       </a>
     </div>
-  </div>
-
-  <div class="section">
-    <span class="section-label">Origins</span>
-    <div class="section-rule"></div>
+    </div>
+    <div class="sub">
+      <span class="section-label">Origins</span>
 
     <div class="category">
       <h3>Fijee (2014&ndash;)</h3>
@@ -549,14 +623,270 @@
         <span class="project-lang">&mdash;</span>
       </a>
     </div>
+    </div>
+  </div>
+
+  <div class="section" id="data">
+    <h2><span class="idx">02</span>Data</h2>
+    <p class="lede">Datasets we release, the pipelines that produce them, and the public archives the work depends on.</p>
+    <p class="was">In 2017 this pointed at OpenFMRI, since folded into OpenNeuro</p>
+    <div class="section-rule"></div>
+    <div class="category">
+      <h3>Datasets we publish (Hugging Face)</h3>
+      <a class="shelf" href="https://huggingface.co/datasets/mhough/spinning-up-in-pde">
+        <span class="shelf-name">spinning-up-in-pde</span>
+        <span class="shelf-desc">Twelve-module PDE-solver curriculum with reference solutions; companion to the GitHub course repo</span>
+        <span class="shelf-kind">dataset</span>
+      </a>
+      <a class="shelf" href="https://huggingface.co/datasets/mhough/tus-skull-focusing">
+        <span class="shelf-name">tus-skull-focusing</span>
+        <span class="shelf-desc">Transcranial ultrasound skull-focusing cases for forward-model and FWI benchmarking</span>
+        <span class="shelf-kind">dataset</span>
+      </a>
+      <a class="shelf" href="https://huggingface.co/datasets/mhough/noddi-microstructure-challenge">
+        <span class="shelf-name">noddi-microstructure-challenge</span>
+        <span class="shelf-desc">Diffusion MRI microstructure fitting challenge data</span>
+        <span class="shelf-kind">dataset</span>
+      </a>
+      <a class="shelf" href="https://huggingface.co/datasets/mhough/trilens-instrument-agreement">
+        <span class="shelf-name">trilens-instrument-agreement</span>
+        <span class="shelf-desc">Instrument-agreement study for the TriLens imaging bench</span>
+        <span class="shelf-kind">dataset</span>
+      </a>
+      <a class="shelf" href="https://huggingface.co/datasets/mhough/inceptionv1-tuning-atlas">
+        <span class="shelf-name">inceptionv1-tuning-atlas</span>
+        <span class="shelf-desc">Unit tuning atlas for InceptionV1, for interpretability work</span>
+        <span class="shelf-kind">dataset</span>
+      </a>
+      <a class="shelf" href="https://huggingface.co/datasets/mhough/induction-emergence-pythia">
+        <span class="shelf-name">induction-emergence-pythia</span>
+        <span class="shelf-desc">Induction-head emergence traces across Pythia checkpoints</span>
+        <span class="shelf-kind">dataset</span>
+      </a>
+      <a class="shelf" href="https://huggingface.co/datasets/mhough/sot-fig4-countdown-ppo-rollouts">
+        <span class="shelf-name">sot-fig4-countdown-ppo-rollouts</span>
+        <span class="shelf-desc">PPO rollouts behind the Societies-of-Thought replication critique</span>
+        <span class="shelf-kind">dataset</span>
+      </a>
+    </div>
+    <div class="category">
+      <h3>Data pipelines and reference geometry</h3>
+      <a class="shelf" href="https://github.com/m9h/microbubbles">
+        <span class="shelf-name">microbubbles</span>
+        <span class="shelf-desc">Pipeline and dataset for reproducing 3D transcranial ultrasound localization microscopy</span>
+        <span class="shelf-kind">Python</span>
+      </a>
+      <a class="shelf" href="https://github.com/m9h/openwater-reference-meshes">
+        <span class="shelf-name">openwater-reference-meshes</span>
+        <span class="shelf-desc">Open skull, head and brain reference meshes for beamforming and transducer placement</span>
+        <span class="shelf-kind">meshes</span>
+      </a>
+      <a class="shelf" href="https://github.com/m9h/spinning-up-in-openscope">
+        <span class="shelf-name">spinning-up-in-openscope</span>
+        <span class="shelf-desc">Onboarding for the OpenScope predictive-processing project: mouse data on DANDI:000253 and the human-EEG matching plan</span>
+        <span class="shelf-kind">guide</span>
+      </a>
+      <a class="shelf" href="https://github.com/m9h/nsg-agent-kit">
+        <span class="shelf-name">nsg-agent-kit</span>
+        <span class="shelf-desc">Run computational-neuroscience jobs on the Neuroscience Gateway against NEMAR datasets</span>
+        <span class="shelf-kind">Python</span>
+      </a>
+      <a class="shelf" href="https://github.com/m9h/zuna-eeg-pipeline">
+        <span class="shelf-name">zuna-eeg-pipeline</span>
+        <span class="shelf-desc">Channel-imputation benchmarks of the Zuna EEG foundation model against MNE spline on OpenNeuro ds000117</span>
+        <span class="shelf-kind">Python</span>
+      </a>
+    </div>
+    <div class="category">
+      <h3>Archives we draw on</h3>
+      <a class="shelf" href="https://openneuro.org/">
+        <span class="shelf-name">OpenNeuro</span>
+        <span class="shelf-desc">BIDS neuroimaging archive; the successor to OpenFMRI, which this menu item pointed at in 2017</span>
+        <span class="shelf-kind">archive</span>
+      </a>
+      <a class="shelf" href="https://dandiarchive.org/">
+        <span class="shelf-name">DANDI</span>
+        <span class="shelf-desc">Neurophysiology data archive (NWB)</span>
+        <span class="shelf-kind">archive</span>
+      </a>
+      <a class="shelf" href="https://nemar.org/">
+        <span class="shelf-name">NEMAR</span>
+        <span class="shelf-desc">OpenNeuro's M/EEG mirror with Neuroscience Gateway compute attached</span>
+        <span class="shelf-kind">archive</span>
+      </a>
+      <a class="shelf" href="https://moabb.neurotechx.com/">
+        <span class="shelf-name">MOABB</span>
+        <span class="shelf-desc">Mother of All BCI Benchmarks: EEG datasets behind our motor-imagery leaderboard runs</span>
+        <span class="shelf-kind">benchmark</span>
+      </a>
+      <a class="shelf" href="https://huggingface.co/mhough">
+        <span class="shelf-name">Hugging Face / mhough</span>
+        <span class="shelf-desc">Everything above, plus model weights, under one account</span>
+        <span class="shelf-kind">hub</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="section" id="text">
+    <h2><span class="idx">03</span>Text</h2>
+    <p class="lede">Writing: the blog, the blogroll for students, manuscripts kept in version control, and talks.</p>
+    <p class="was">In 2017 this was the Ghost editor; the blog now lives at <a href="https://center17.org/">center17.org</a></p>
+    <div class="section-rule"></div>
+    <div class="category">
+      <h3>Writing</h3>
+      <a class="shelf" href="https://center17.org/">
+        <span class="shelf-name">center17.org</span>
+        <span class="shelf-desc">The blog, restarted November 2026 on Ghost; follows on the open social web as <code>@index@center17.org</code> and by RSS</span>
+        <span class="shelf-kind">blog</span>
+      </a>
+      <a class="shelf" href="https://center17.org/blogroll/">
+        <span class="shelf-name">Blogroll</span>
+        <span class="shelf-desc">Feeds for computational psychiatry, neuroimaging and neuromodulation, with the annual anchors: the Zurich Computational Psychiatry Course, the SOBP Brainhack, Aaron Swartz Day and its suicide-prevention resources; one OPML file subscribes to all of them</span>
+        <span class="shelf-kind">page + OPML</span>
+      </a>
+      <a class="shelf" href="https://center17.org/">
+        <span class="shelf-name">2017&ndash;2018 archive</span>
+        <span class="shelf-desc">The first ten posts and five drafts from center17.ghost.io, preserved in a repository while the blog restarts</span>
+        <span class="shelf-kind">archive</span>
+      </a>
+    </div>
+    <div class="category">
+      <h3>Manuscripts and white papers</h3>
+      <a class="shelf" href="https://github.com/m9h/Fijee-Project">
+        <span class="shelf-name">Fijee Project 2.0</span>
+        <span class="shelf-desc">White paper in progress: the Rennes FEM-head + stimulation + neural-mass programme (Merlet et al. 2013) redone as differentiable JAX across neurojax, ti-sim, brain-fwi, vbjax/vpjax and inferjax</span>
+        <span class="shelf-kind">in progress</span>
+      </a>
+      <a class="shelf" href="https://github.com/m9h/biopunk-bioreactor">
+        <span class="shelf-name">biopunk-bioreactor</span>
+        <span class="shelf-desc">Open-bioreactor review with build proposals; article, slides and poster built from one source (CC BY 4.0)</span>
+        <span class="shelf-kind">TeX</span>
+      </a>
+      <a class="shelf" href="https://github.com/m9h/neural-decoding-transfer">
+        <span class="shelf-name">neural-decoding-transfer</span>
+        <span class="shelf-desc">POYO spiking foundation model reproduction and transfer study, with a reproducible Pweave manuscript</span>
+        <span class="shelf-kind">manuscript</span>
+      </a>
+      <a class="shelf" href="https://github.com/m9h/self-report-validity">
+        <span class="shelf-name">self-report-validity</span>
+        <span class="shelf-desc">Chain-of-thought as verbal protocol: Ericsson and Simon admissibility conditions for model self-reports</span>
+        <span class="shelf-kind">manuscript</span>
+      </a>
+    </div>
+    <div class="category">
+      <h3>Presentations</h3>
+      <a class="project" href="https://github.com/m9h/neurosim">
+        <span class="project-name">neurosim</span>
+        <span class="project-desc">JAX-native software stack for cognitive agent simulation: project overview and presentations</span>
+        <span class="project-lang">TeX</span>
+      </a>
+      <a class="project" href="https://github.com/m9h/neurotechx-presentations">
+        <span class="project-name">neurotechx-presentations</span>
+        <span class="project-desc">Reusable NeuroTechX-inspired Beamer theme and presentation drafts</span>
+        <span class="project-lang">TeX</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="section" id="models">
+    <h2><span class="idx">04</span>Models</h2>
+    <p class="lede">Trained weights and mechanistic models, and the archives that keep models citable and runnable.</p>
+    <p class="was">In 2017 this pointed at BioModels</p>
+    <div class="section-rule"></div>
+    <div class="category">
+      <h3>Weights we publish (Hugging Face)</h3>
+      <a class="shelf" href="https://huggingface.co/mhough/zuna-base">
+        <span class="shelf-name">zuna-base</span>
+        <span class="shelf-desc">Zuna EEG foundation model, 380M-parameter diffusion model for channel imputation, packaged for the benchmark pipeline</span>
+        <span class="shelf-kind">weights</span>
+      </a>
+      <a class="shelf" href="https://huggingface.co/mhough/poyo-mp-reproduction">
+        <span class="shelf-name">poyo-mp-reproduction</span>
+        <span class="shelf-desc">POYO spiking foundation model reproduction (held-out R&sup2; 0.90)</span>
+        <span class="shelf-kind">weights</span>
+      </a>
+      <a class="shelf" href="https://huggingface.co/mhough/olmo3-jacobian-lenses">
+        <span class="shelf-name">olmo3-jacobian-lenses</span>
+        <span class="shelf-desc">Jacobian lenses trained on OLMo 3 for interpretability</span>
+        <span class="shelf-kind">weights</span>
+      </a>
+    </div>
+    <div class="category">
+      <h3>Mechanistic models we maintain</h3>
+      <a class="shelf" href="https://github.com/m9h/vbjax">
+        <span class="shelf-name">vbjax</span>
+        <span class="shelf-desc">Virtual brain modelling in JAX: neural-mass networks on connectomes (fork of ins-amu/vbjax)</span>
+        <span class="shelf-kind">JAX</span>
+      </a>
+      <a class="shelf" href="https://github.com/m9h/vpjax">
+        <span class="shelf-name">vpjax</span>
+        <span class="shelf-desc">Virtual physiology in JAX: differentiable cerebrovascular, metabolic and pharmacokinetic models that close the loop from neural mass to BOLD and EEG</span>
+        <span class="shelf-kind">JAX</span>
+      </a>
+      <a class="shelf" href="https://github.com/m9h/gnf-jax">
+        <span class="shelf-name">gnf-jax</span>
+        <span class="shelf-desc">Graph neural fields: stochastic Wilson-Cowan on connectome harmonics</span>
+        <span class="shelf-kind">JAX</span>
+      </a>
+      <a class="shelf" href="https://github.com/m9h/hnn-jax">
+        <span class="shelf-name">hnn-jax</span>
+        <span class="shelf-desc">Differentiable reimplementation of the Human Neocortical Neurosolver forward model, validated against NEURON</span>
+        <span class="shelf-kind">JAX</span>
+      </a>
+      <a class="shelf" href="https://github.com/m9h/vc2008-netpyne">
+        <span class="shelf-name">vc2008-netpyne</span>
+        <span class="shelf-desc">Vierling-Claassen 2008 auditory-entrainment model in NetPyNE plus a differentiable theta-neuron version; ModelDB-ready</span>
+        <span class="shelf-kind">NEURON / JAX</span>
+      </a>
+      <a class="shelf" href="https://github.com/m9h/neurojax">
+        <span class="shelf-name">neurojax</span>
+        <span class="shelf-desc">Differentiable BEM/FEM head models and fifteen inverse solvers for M/EEG</span>
+        <span class="shelf-kind">JAX</span>
+      </a>
+      <a class="shelf" href="https://github.com/m9h/chimerax-vampnet">
+        <span class="shelf-name">chimerax-vampnet</span>
+        <span class="shelf-desc">VAMPnet and Markov state models of protein conformational landscapes inside UCSF ChimeraX</span>
+        <span class="shelf-kind">Python</span>
+      </a>
+    </div>
+    <div class="category">
+      <h3>Model archives</h3>
+      <a class="shelf" href="https://modeldb.science/">
+        <span class="shelf-name">ModelDB</span>
+        <span class="shelf-desc">Computational neuroscience model repository; where vc2008-netpyne is headed</span>
+        <span class="shelf-kind">archive</span>
+      </a>
+      <a class="shelf" href="https://www.ebi.ac.uk/biomodels/">
+        <span class="shelf-name">BioModels</span>
+        <span class="shelf-desc">EMBL-EBI systems-biology models; the 2017 menu item, at its current address</span>
+        <span class="shelf-kind">archive</span>
+      </a>
+      <a class="shelf" href="https://www.opensourcebrain.org/">
+        <span class="shelf-name">Open Source Brain</span>
+        <span class="shelf-desc">Shared, runnable neuroscience models in NeuroML</span>
+        <span class="shelf-kind">archive</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="section" id="wefunk">
+    <h2><span class="idx">05</span>WeFunk</h2>
+    <p class="lede">The one menu item that never needed updating.</p>
+    <div class="section-rule"></div>
+    <div class="colophon">
+      <p><a href="https://www.wefunkradio.com/">WeFunk Radio</a>, Montreal, has been the studio soundtrack since the first version of this site. Still is.</p>
+      <p>Colophon: one hand-written HTML file served by GitHub Pages at projects.center17.org; DNS on Cloudflare; the blog on Ghost at the apex. No build step, no analytics, no cookies. Type set in Palatino with a monospace face for the index.</p>
+    </div>
   </div>
 
   <footer>
-    <span>&copy; 2026 Center17</span>
+    <span>&copy; 2017&ndash;2026 Center17</span>
     <nav>
       <a href="https://github.com/m9h">GitHub</a>
-      <a href="https://center17.org">Writing</a>
-      <a href="https://twitter.com/mhough">Contact</a>
+      <a href="https://center17.org">Blog</a>
+      <a href="https://center17.org/blogroll/">Blogroll</a>
+      <a href="https://huggingface.co/mhough">Hugging Face</a>
+      <a href="https://bsky.app/profile/mhough.bsky.social">Bluesky</a>
     </nav>
   </footer>
 </div>
