@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Morgan Hough</title>
-  <meta name="description" content="Morgan Hough: computational neuroscience, neuroimaging, and open hardware. Code as m9h, models and data as mhough, writing at center17.org.">
+  <meta name="description" content="Morgan Hough, San Francisco. Developmental neurobiology at OREL, community manager at NeuroTechX, neurotech lead at Frontier Tower, R&amp;D at Biopunk Lab. Code as m9h, models and data as mhough, writing at center17.org.">
   <link rel="me" href="https://github.com/m9h">
   <link rel="me" href="https://huggingface.co/mhough">
   <link rel="me" href="https://bsky.app/profile/mhough.bsky.social">
+  <link rel="me" href="https://www.linkedin.com/in/morgan-g-hough">
+  <link rel="me" href="https://twitter.com/mhough">
   <style>
     @font-face {
       font-family: 'System';
@@ -15,40 +17,66 @@
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      background: #111111;
-      color: #d4d4d4;
+      background: #111111; color: #d4d4d4;
       font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
-      font-size: 17px;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
+      font-size: 17px; line-height: 1.7; -webkit-font-smoothing: antialiased;
     }
     ::selection { background: #c8102e; color: #fff; }
     a { color: inherit; text-decoration: none; border-bottom: 1px solid #555; transition: border-color 0.15s; }
     a:hover { border-bottom-color: #c8102e; }
     .mono { font-family: 'System', 'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace; }
 
-    .page { max-width: 760px; margin: 0 auto; padding: 72px 32px 80px; }
+    .topnav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(17,17,17,0.94); backdrop-filter: blur(6px); border-bottom: 1px solid #2a2a2a;
+    }
+    .topnav .inner {
+      max-width: 1000px; margin: 0 auto; padding: 14px 32px;
+      display: flex; align-items: baseline; gap: 24px; flex-wrap: wrap;
+      font-family: 'System', 'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
+      font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em;
+    }
+    .topnav a { border-bottom: none; color: #999; }
+    .topnav a:hover { color: #d4d4d4; }
+    .topnav .brand { color: #d4d4d4; margin-right: 8px; }
+    .topnav .brand b { color: #c8102e; }
+    .topnav .ext { margin-left: auto; }
+    .topnav .ext::after { content: " \2197"; }
 
-    .masthead { padding-bottom: 36px; border-bottom: 3px solid #d4d4d4; margin-bottom: 44px; }
+    .page { max-width: 1000px; margin: 0 auto; padding: 56px 32px 80px; }
+
+    .masthead {
+      display: grid; grid-template-columns: 1fr 320px; gap: 40px; align-items: end;
+      padding-bottom: 40px; border-bottom: 3px solid #d4d4d4; margin-bottom: 52px;
+    }
     .masthead h1 {
       font-family: 'System', 'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
-      font-size: 2.6rem; font-weight: 400; letter-spacing: 0.06em; line-height: 1.1; margin-bottom: 10px;
+      font-size: 2.8rem; font-weight: 400; letter-spacing: 0.06em; line-height: 1.1; margin-bottom: 10px;
     }
     .masthead h1 b { color: #c8102e; font-weight: 700; }
     .handle {
       font-family: 'System', 'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
-      font-size: 0.8rem; letter-spacing: 0.14em; text-transform: lowercase; color: #888;
+      font-size: 0.78rem; letter-spacing: 0.14em; text-transform: lowercase; color: #888;
     }
-    .lede { font-style: italic; color: #999; max-width: 560px; margin-top: 14px; }
+    .masthead .lede { font-style: italic; color: #999; max-width: 520px; margin-top: 16px; font-size: 1rem; }
+    .masthead .lede a { color: #bbb; }
+    .masthead .now {
+      font-family: 'System', 'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
+      font-size: 0.74rem; line-height: 1.9; color: #888;
+    }
+    .masthead .now dt { text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.62rem; color: #666; margin-top: 8px; }
+    .masthead .now dd { margin: 0; }
+    .masthead .now a { color: #bbb; }
 
-    .section { margin-bottom: 44px; }
+    .section { margin-bottom: 52px; scroll-margin-top: 64px; }
     .section h2 {
       font-family: 'System', 'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
-      font-size: 0.74rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.16em;
-      color: #888; margin-bottom: 14px; padding-bottom: 6px; border-bottom: 1px solid #333;
+      font-size: 1.15rem; font-weight: 400; letter-spacing: 0.06em; margin-bottom: 4px;
     }
+    .section .lede { font-style: italic; color: #888; max-width: 640px; margin-bottom: 18px; font-size: 0.95rem; }
+    .section .lede a { color: #bbb; }
     .row {
-      display: grid; grid-template-columns: 180px 1fr; gap: 16px;
+      display: grid; grid-template-columns: 220px 1fr 90px; gap: 16px;
       padding: 9px 0; border-bottom: 1px dotted #2a2a2a; align-items: baseline;
     }
     .row:last-child { border-bottom: none; }
@@ -57,9 +85,15 @@
       font-family: 'System', 'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
       font-size: 0.86rem; font-weight: 700; transition: color 0.15s; overflow-wrap: anywhere;
     }
-    .v { font-size: 0.9rem; color: #999; }
+    .v { font-size: 0.88rem; color: #999; }
     .v a { color: #bbb; }
-    .prose { color: #aaa; max-width: 600px; }
+    .t {
+      font-family: 'System', 'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
+      font-size: 0.68rem; color: #777; text-align: right; white-space: nowrap;
+    }
+    .affil .row { grid-template-columns: 220px 1fr; }
+    .affil .v em { color: #bbb; font-style: normal; }
+    .prose { color: #aaa; max-width: 640px; }
     .prose p + p { margin-top: 12px; }
     .prose a { color: #ccc; }
 
@@ -75,49 +109,176 @@
     }
     footer nav a:hover { color: #c8102e; }
 
-    @media (max-width: 600px) {
-      .page { padding: 48px 20px 60px; }
-      .masthead h1 { font-size: 2rem; }
-      .row { grid-template-columns: 1fr; gap: 2px; }
+    @media (max-width: 700px) {
+      .topnav .inner { padding: 12px 20px; gap: 14px; }
+      .topnav .ext { margin-left: 0; }
+      .page { padding: 40px 20px 60px; }
+      .masthead { grid-template-columns: 1fr; }
+      .masthead h1 { font-size: 2.1rem; }
+      .row, .affil .row { grid-template-columns: 1fr; gap: 2px; }
+      .t { text-align: left; }
     }
   </style>
 </head>
 <body>
+<nav class="topnav"><div class="inner">
+  <a class="brand" href="#">morgan <b>hough</b></a>
+  <a href="#affiliations">Affiliations</a>
+  <a href="#pinned">Pinned</a>
+  <a href="#code">Code</a>
+  <a href="#center17">Center17</a>
+  <a class="ext" href="https://github.com/m9h">github.com/m9h</a>
+</div></nav>
+
 <div class="page">
 
   <header class="masthead">
-    <h1>Morgan <b>Hough</b></h1>
-    <div class="handle">m9h on github &middot; mhough on hugging face &amp; bluesky</div>
-    <p class="lede">Computational neuroscience, neuroimaging, and open hardware. Most of the work lives at <a href="https://center17.org/">Center17</a>, demi-human cybernetics.</p>
+    <div>
+      <h1>Morgan <b>Hough</b></h1>
+      <div class="handle">san francisco &middot; m9h on github &middot; mhough on hugging face, bluesky, x</div>
+      <p class="lede">Developmental neurobiology, neurotechnology, and open hardware. Most of the research lives at <a href="https://center17.org/">Center17</a>, demi-human cybernetics; the code is below.</p>
+    </div>
+    <dl class="now">
+      <dt>Code</dt><dd><a href="https://github.com/m9h">github.com/m9h</a> &middot; <a href="https://gitlab.com/center17">gitlab.com/center17</a></dd>
+      <dt>Models &amp; data</dt><dd><a href="https://huggingface.co/mhough">huggingface.co/mhough</a></dd>
+      <dt>Social</dt><dd><a href="https://bsky.app/profile/mhough.bsky.social">bluesky</a> &middot; <a href="https://twitter.com/mhough">x</a> &middot; <a href="https://www.linkedin.com/in/morgan-g-hough">linkedin</a> &middot; <a href="https://t.me/s/mhough">telegram</a></dd>
+      <dt>Writing</dt><dd><a href="https://center17.org/">center17.org</a></dd>
+    </dl>
   </header>
 
-  <section class="section">
-    <h2>Find me</h2>
-    <div class="row"><span class="k"><a href="https://github.com/m9h">github.com/m9h</a></span><span class="v">code</span></div>
-    <div class="row"><span class="k"><a href="https://huggingface.co/mhough">huggingface.co/mhough</a></span><span class="v">models and datasets</span></div>
-    <div class="row"><span class="k"><a href="https://bsky.app/profile/mhough.bsky.social">mhough.bsky.social</a></span><span class="v">bluesky</span></div>
-    <div class="row"><span class="k"><a href="https://gitlab.com/center17">gitlab.com/center17</a></span><span class="v">center17 group</span></div>
+  <section class="section affil" id="affiliations">
+    <h2>Affiliations</h2>
+    <p class="lede">As listed on the GitHub profile.</p>
+    <a class="row" href="https://github.com/OREL-group"><span class="k">OREL</span><span class="v"><em>Developmental Neurobiology.</em> Orthogonal Research &amp; Education Lab, a distributed open-science lab in computational biology, neuroscience, and cognition.</span></a>
+    <a class="row" href="https://neurotechx.com/"><span class="k">NeuroTechX</span><span class="v"><em>Community Manager.</em> The volunteer-led global community of neurotechnology innovators.</span></a>
+    <a class="row" href="https://berlinhouse.com/"><span class="k">Frontier Tower</span><span class="v"><em>Neurotech Lead.</em> Berlin House's self-organized community lab for frontier tech in San Francisco.</span></a>
+    <a class="row" href="https://github.com/m9h?tab=repositories&q=biopunk"><span class="k">Biopunk Lab</span><span class="v"><em>Research and Development.</em> Open bioreactors, bioassays, liquid handling, and living art.</span></a>
   </section>
 
-  <section class="section">
+  <section class="section" id="pinned">
+    <h2>Pinned</h2>
+    <p class="lede">The six repositories pinned on the profile.</p>
+    <a class="row" href="https://github.com/m9h/alf"><span class="k">alf</span><span class="v">Active Inference/Learning Framework: standalone JAX-native active inference for discrete POMDPs</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/spinning-up-alf"><span class="k">spinning-up-alf</span><span class="v">Spinning Up in Active Inference: 16-module curriculum bridging RL and active inference in JAX</span><span class="t">Jupyter Notebook</span></a>
+      <a class="row" href="https://github.com/m9h/anatomical-compiler"><span class="k">anatomical-compiler</span><span class="v">A hypergraph network instrument for synthetic morphology, toward Levin&#x27;s anatomical compiler</span><span class="t">Jupyter Notebook</span></a>
+      <a class="row" href="https://github.com/m9h/bl1"><span class="k">bl1</span><span class="v">In-silico cortical culture simulator: JAX spiking network with STDP, virtual MEA, closed-loop games</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/neurojax"><span class="k">neurojax</span><span class="v">JAX-accelerated electrophysiology analysis with MNE, Diffrax, and osl-dynamics integration</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/sbi4dwi"><span class="k">sbi4dwi</span><span class="v">Open-source toolbox for reproducible diffusion MRI microstructure estimation</span><span class="t"></span></a>
+  </section>
+
+  <div id="code"></div>
+  
+    <section class="section">
+      <h2>Differentiable neuroimaging in JAX</h2>
+      <p class="lede">Forward models, inverse solvers, and simulation-based inference for EEG, MEG, MRI, MRS, fNIRS, and ultrasound.</p>
+      <a class="row" href="https://github.com/m9h/neurojax"><span class="k">neurojax</span><span class="v">JAX-accelerated electrophysiology analysis CLI with MNE, Diffrax, and osl-dynamics integration</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/brain-fwi"><span class="k">brain-fwi</span><span class="v">Full-waveform inversion for transcranial ultrasound in JAX, with neural-operator surrogates</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/ti-sim"><span class="k">ti-sim</span><span class="v">Temporal interference (TI) stimulation simulation: Grossman phantom, layered spheres, SimNIBS heads, MIDA</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/inferjax"><span class="k">inferjax</span><span class="v">Amortized simulation-based inference and posterior calibration for any JAX simulator</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/dot-jax"><span class="k">dot-jax</span><span class="v">JAX/Equinox toolbox for Diffuse Optical Tomography and fNIRS</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/mrs-jax"><span class="k">mrs-jax</span><span class="v">MR Spectroscopy processing in JAX</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/hnn-jax"><span class="k">hnn-jax</span><span class="v">Differentiable JAX reimplementation of the HNN forward model, validated against an HPC-generated hnn_core (NEURON)…</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/gnf-jax"><span class="k">gnf-jax</span><span class="v">Graph neural fields in JAX: stochastic Wilson-Cowan on connectome harmonics (port of Aqil&#x27;s…</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/hippy-feat"><span class="k">hippy-feat</span><span class="v">JAX neuroimaging library + MindEye RT preprocessing comparison framework</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/neuroelectric-mri"><span class="k">neuroelectric-mri</span><span class="v">Neuronal-current MRI, MREIT, and MRCDI: evidence, history, and simulation benchmarks from POSSUM to SBI</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/mri-rf-stack"><span class="k">mri-rf-stack</span><span class="v">MRI RF benchmarks with Hertzon, NeuroFedora integration, and inverse-imaging experiments</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/fem-trials"><span class="k">fem-trials</span><span class="v">Solver trials for ae-sim and ti-sim: dolfinx complex path, SuperLU_DIST vs MUMPS, Helmholtz with PML</span><span class="t">Python</span></a>
+    </section>
+    <section class="section">
+      <h2>Brain dynamics, active inference, agents</h2>
+      <p class="lede">Neural mass and physiology models, spiking cultures, active inference, and the control theory under them.</p>
+      <a class="row" href="https://github.com/m9h/alf"><span class="k">alf</span><span class="v">Active Inference/Learning Framework</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/bl1"><span class="k">bl1</span><span class="v">In-silico cortical culture simulator (DishBrain-inspired)</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/vpjax"><span class="k">vpjax</span><span class="v">Virtual Physiology in JAX — differentiable cerebrovascular models (complement to vbjax)</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/vc2008-netpyne"><span class="k">vc2008-netpyne</span><span class="v">Vierling-Claassen et al. (2008) J Neurophysiol auditory-entrainment model: faithful NetPyNE/NEURON re-implementation…</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/neuro-dynadojo"><span class="k">neuro-dynadojo</span><span class="v">Ground-truth benchmark for M/EEG dynamics: connectivity recovery, directed flow, traveling waves, and foundation-model…</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/jaxctrl"><span class="k">jaxctrl</span><span class="v">Differentiable control theory in JAX: Lyapunov, Riccati, Gramians, tensor control, and hypergraph controllability</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/hgx"><span class="k">hgx</span><span class="v">Hypergraph neural networks in JAX/Equinox: topological and geometric deep learning on higher-order domains</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/devograph"><span class="k">devograph</span><span class="v">Developmental neurobiology extensions for hgx: dynamics, geometric convolutions, optimal transport, C. elegans tooling</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/neurosim"><span class="k">neurosim</span><span class="v">NeuroSim: JAX-native software stack for cognitive agent simulation</span><span class="t">TeX</span></a>
+      <a class="row" href="https://github.com/m9h/SustainHub-jaxmarl"><span class="k">SustainHub-jaxmarl</span><span class="v">Pure-JAX MARL replication of Rohira SustainHub (GSoC 2025)</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/agentsciml"><span class="k">agentsciml</span><span class="v">Multi-agent evolutionary framework for automated scientific machine learning discovery</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/qc-computational-cognitive-modeling"><span class="k">qc-computational-cognitive-modeling</span><span class="v">Quantum cognition: bridging quantum computing and computational cognitive neuroscience</span><span class="t">Python</span></a>
+    </section>
+    <section class="section">
+      <h2>Interpretability and reasoning</h2>
+      <p class="lede">Controls, null distributions, and replications for claims about what models are doing inside.</p>
+      <a class="row" href="https://github.com/m9h/jlens-lab"><span class="k">jlens-lab</span><span class="v">Convergence fitting, hybrid architecture layouts, and the controls the Jacobian lens needs before you believe a figure…</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/tri-lens"><span class="k">tri-lens</span><span class="v">Do three interpretability instruments agree about the same activation? J-lens vs NLA vs SAE, with mismatch nulls and…</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/controls-and-trajectories"><span class="k">controls-and-trajectories</span><span class="v">Publishing the null distributions and developmental trajectories interpretability papers rely on but rarely ship</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/societies-of-thought"><span class="k">societies-of-thought</span><span class="v">Does reasoning work by simulating a &#x27;society of thought&#x27;? A replication of arXiv:2601.10825 finding its causal claim…</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/self-report-validity"><span class="k">self-report-validity</span><span class="v">Chain-of-thought as a verbal protocol: Ericsson &amp; Simon admissibility conditions for model self-reports, with the nulls</span><span class="t"></span></a>
+      <a class="row" href="https://github.com/m9h/wwj"><span class="k">wwj</span><span class="v">JAX/Equinox port of WeightWatcher</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/neural-decoding-transfer"><span class="k">neural-decoding-transfer</span><span class="v">Reproducing the neuro-galaxy POYO spiking-foundation model (held-out R2=0.904) and characterizing what its…</span><span class="t">Python</span></a>
+    </section>
+    <section class="section">
+      <h2>Spinning Up curricula</h2>
+      <p class="lede">Module-by-module courses, each one a runnable repo.</p>
+      <a class="row" href="https://github.com/m9h/spinning-up-alf"><span class="k">spinning-up-alf</span><span class="v">Spinning Up in Active Inference: 16-module curriculum bridging RL and Active Inference in JAX</span><span class="t">Jupyter Notebook</span></a>
+      <a class="row" href="https://github.com/m9h/spinning-up-in-pde"><span class="k">spinning-up-in-pde</span><span class="v">Spinning Up in PDE Solvers — community-science curriculum tracing computational PDE solvers from finite differences to…</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/spinning-up-in-mech-interp"><span class="k">spinning-up-in-mech-interp</span><span class="v">Spinning Up in Mechanistic Interpretability</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/spinning-up-in-openscope"><span class="k">spinning-up-in-openscope</span><span class="v">Onboarding guide for the OpenScope Community Predictive-Processing project: mouse data (DANDI:000253), analysis…</span><span class="t">Python</span></a>
+    </section>
+    <section class="section">
+      <h2>Open hardware and wet lab</h2>
+      <p class="lede">EEG acquisition, lab instruments, bioreactors, and the Biopunk Lab projects.</p>
+      <a class="row" href="https://github.com/m9h/freeeeg128"><span class="k">freeeeg128</span><span class="v">Open-hardware 128-channel EEG acquisition system</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/open-alliance-daq"><span class="k">open-alliance-daq</span><span class="v">Open-source analog data acquisition + peak integration for a Waters Alliance e2695 / 2489 / 2424 HPLC stack (Raspberry…</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/ato-heater-pid"><span class="k">ato-heater-pid</span><span class="v">Heater + PID driver board for Hacker Fab tools, written in atopile</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/ato-qcm-monitor"><span class="k">ato-qcm-monitor</span><span class="v">Vacuum QCM deposition-rate monitor (openQCM NEXT method: Teensy 4.1 + AD9851 + AD8302) for Hacker Fab sputter…</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/biopunk-bioreactor"><span class="k">biopunk-bioreactor</span><span class="v">An evidence-based review of open-source continuous-culture bioreactors (Chi.Bio, OpenEvo, Pioreactor, eVOLVER, EVE,…</span><span class="t">TeX</span></a>
+      <a class="row" href="https://github.com/m9h/biopunk-jubilee"><span class="k">biopunk-jubilee</span><span class="v">Closing the verification gap in Science Jubilee: a proposal to port Tandem&#x27;s physical-digital assertions into…</span><span class="t">TeX</span></a>
+      <a class="row" href="https://github.com/m9h/biopunk-duckweed"><span class="k">biopunk-duckweed</span><span class="v">Which nutrient feeds the coves? A DuckBot/OECD-221 duckweed bioassay pilot for Lake Wylie</span><span class="t">TeX</span></a>
+      <a class="row" href="https://github.com/m9h/biopunk-artbot"><span class="k">biopunk-artbot</span><span class="v">Unified biopunk cloud lab: Opentrons OT-2 + Creality bioprinter + flipdot display</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/biopunk-display"><span class="k">biopunk-display</span><span class="v">Biopunk flipdot display server</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/bsccm-jax"><span class="k">bsccm-jax</span><span class="v">JAX/Kidger + SCICO computational-microscopy workbench over the BSCCM dataset: DPC quantitative phase reconstruction +…</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/anatomical-compiler"><span class="k">anatomical-compiler</span><span class="v">Engineering fully-biologic tissue systems: a hypergraph instrument for synthetic morphology and multicellularity</span><span class="t">Jupyter Notebook</span></a>
+      <a class="row" href="https://github.com/m9h/biohub-starter"><span class="k">biohub-starter</span><span class="v">Starter kit for the Kaggle Biohub Cell Tracking During Development competition: embryo-disjoint validation, measured…</span><span class="t">Python</span></a>
+    </section>
+    <section class="section">
+      <h2>Structural biology</h2>
+      <p class="lede">Conformational landscapes and DNA nanostructures inside UCSF ChimeraX.</p>
+      <a class="row" href="https://github.com/m9h/chimerax-vampnet"><span class="k">chimerax-vampnet</span><span class="v">VAMPnet + Markov state modeling of protein conformational landscapes inside UCSF ChimeraX</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/chimerax-origami"><span class="k">chimerax-origami</span><span class="v">Off-target-aware DNA-origami sequence design + lipid-envelope modeling in ChimeraX</span><span class="t">Python</span></a>
+    </section>
+    <section class="section">
+      <h2>Packaging and infrastructure</h2>
+      <p class="lede">Getting neuroscience software to build, install, and run on Fedora, Debian, macOS, and arm64.</p>
+      <a class="row" href="https://github.com/m9h/neurofedora"><span class="k">neurofedora</span><span class="v">Fedora COPR scientific stack — RPM spec files (mirror; primary at gitlab.com/morgan.hough/neurofedora)</span><span class="t">Shell</span></a>
+      <a class="row" href="https://github.com/m9h/neurodebian"><span class="k">neurodebian</span><span class="v">Debian/NeuroDebian packaging for neuroimaging tools (LSL, ITK, ANTs, ...) ported from neurofedora</span><span class="t">Makefile</span></a>
+      <a class="row" href="https://github.com/m9h/homebrew-neuro"><span class="k">homebrew-neuro</span><span class="v">Homebrew tap for neuroimaging tools (LAYNII, Connectome Workbench, SigViewer, etc.)</span><span class="t">Ruby</span></a>
+      <a class="row" href="https://github.com/m9h/neurocontainers-arm"><span class="k">neurocontainers-arm</span><span class="v">Arm64 container images for neuroimaging pipelines on NVIDIA Grace-Blackwell / aarch64</span><span class="t">Dockerfile</span></a>
+      <a class="row" href="https://github.com/m9h/fedora-afni-desktop-integration"><span class="k">fedora-afni-desktop-integration</span><span class="v">Desktop integration for AFNI on Fedora: menu entries, icons, MIME types, AppStream metainfo, file-manager launcher</span><span class="t">Makefile</span></a>
+      <a class="row" href="https://github.com/m9h/fedora-linear-algebra-mag-series"><span class="k">fedora-linear-algebra-mag-series</span><span class="v">8-part article series on the scientific linear algebra stack on Fedora</span><span class="t"></span></a>
+      <a class="row" href="https://github.com/m9h/charm-gems-cli"><span class="k">charm-gems-cli</span><span class="v">FSL-style CLI binaries for charm-gems (SimNIBS CHARM segmentation kernels)</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/insula"><span class="k">insula</span><span class="v">Modernised fork of the BrainVISA core (AIMS, soma, Anatomist): Qt 6, AUTOMOC, stock CMake</span><span class="t">C++</span></a>
+      <a class="row" href="https://github.com/m9h/libspm"><span class="k">libspm</span><span class="v">Standalone C library from SPM numerical routines (diffeomorphic registration, PDE solvers, B-spline interpolation, GMM)</span><span class="t">C</span></a>
+      <a class="row" href="https://github.com/m9h/nsg-agent-kit"><span class="k">nsg-agent-kit</span><span class="v">Run computational-neuroscience jobs on the Neuroscience Gateway (NSG/Expanse) against NEMAR datasets</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/research-infra"><span class="k">research-infra</span><span class="v">Manuscript assembly, Beamer slides, and project validation for a multi-repo research lab</span><span class="t">Python</span></a>
+      <a class="row" href="https://github.com/m9h/autonomic"><span class="k">autonomic</span><span class="v">Emacs as a tool server for coding agents</span><span class="t">Emacs Lisp</span></a>
+    </section>
+    <section class="section">
+      <h2>Origins, 2017</h2>
+      <p class="lede">The first Center17 effort: FEM forward modelling for EEG with FreeSurfer, FSL, TRACULA, and MNE via DataLad.</p>
+      <a class="row" href="https://github.com/m9h/fijee"><span class="k">fijee</span><span class="v">Forward modelling with FEM for EEG, with DataLad-managed FSL, FreeSurfer, TRACULA, and MNE</span><span class="t"></span></a>
+      <a class="row" href="https://github.com/m9h/infocypher-scieng-deps"><span class="k">infocypher-scieng-deps</span><span class="v">Project tracking the fijee build dependencies separately from the main fijee-project</span><span class="t"></span></a>
+      <a class="row" href="https://github.com/m9h/valis"><span class="k">valis</span><span class="v">Shell script to spin up an AWS-hosted JupyterHub kubernetes cluster at valis.center17.net</span><span class="t"></span></a>
+    </section>
+
+  <section class="section" id="center17">
     <h2>Center17</h2>
-    <div class="row"><span class="k"><a href="https://center17.org/">center17.org</a></span><span class="v">blog and about</span></div>
-    <div class="row"><span class="k"><a href="https://projects.center17.org/">projects.center17.org</a></span><span class="v">index of code, data, and models</span></div>
-    <div class="row"><span class="k"><a href="https://river.center17.org/">river.center17.org</a></span><span class="v">blogroll river, newest first, with an events calendar</span></div>
-  </section>
-
-  <section class="section">
-    <h2>Threads</h2>
-    <div class="prose">
-      <p>Differentiable neuroimaging in JAX: forward models, inverse solvers, and full-waveform inversion for EEG, MEG, and ultrasound. Neural mass and physiological models of the brain, and what pharmacology does to them.</p>
-      <p>Packaging neuroscience software for Fedora, and building open lab hardware: data acquisition, process control, and optical benches.</p>
-    </div>
+    <p class="lede">The lab site, its project index, and its reading river.</p>
+    <a class="row" href="https://center17.org/"><span class="k">center17.org</span><span class="v">Blog and about page</span><span class="t">ghost</span></a>
+    <a class="row" href="https://projects.center17.org/"><span class="k">projects.center17.org</span><span class="v">Index of code, data, and models across the lab's repositories</span><span class="t">gitlab pages</span></a>
+    <a class="row" href="https://river.center17.org/"><span class="k">river.center17.org</span><span class="v">Blogroll river, newest first, with an events calendar</span><span class="t">gitlab pages</span></a>
   </section>
 
   <footer>
-    <span>&copy; Morgan Hough</span>
+    <span>&copy; Morgan Hough &middot; 85 original repositories on GitHub</span>
     <nav>
       <a href="https://github.com/m9h/m9h.github.io">source</a>
+      <a href="https://github.com/m9h">github</a>
+      <a href="https://huggingface.co/mhough">hugging face</a>
       <a href="https://center17.org/">center17</a>
     </nav>
   </footer>
