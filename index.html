@@ -1,131 +1,75 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Morgan G. Hough (m9h)</title>
-    <meta name="description" content="Morgan G. Hough, neuroimaging researcher and scientific software engineer, San Francisco. CV, publications, and open-source projects.">
+    <title>Morgan G. Hough</title>
+    <meta name="description" content="Morgan G. Hough (m9h): neuroimaging researcher and scientific software engineer in San Francisco.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="me" href="https://github.com/m9h">
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1><a href="./">Morgan G. Hough</a> <small>m9h</small></h1>
+    <div class="page">
+      <aside>
+        <div class="inner">
+          <a class="logo" href="./" aria-label="Home">MH</a>
+          <h1 class="name"><a href="./">Morgan G. Hough</a></h1>
+          <nav>
+            <a class="current" href="./">About</a>
+            <a href="cv.html">CV</a>
+            <a href="https://center17.org/">Writing</a>
+          </nav>
+        </div>
+      </aside>
 
-        <p>Neuroimaging researcher and scientific software engineer. San Francisco, CA.</p>
+      <main>
+        <h1 class="name"><a href="./">Morgan G. Hough</a></h1>
 
-        <p class="view"><a href="https://github.com/m9h">View My GitHub Profile</a></p>
+        <div class="prose">
+          <p>I'm a neuroimaging researcher and scientific software engineer living in San Francisco, CA. I'm currently the Executive Director of <a href="https://neurotechx.com/">NeuroTechX</a> and the Director and Principal Scientist of Biopunk Lab. I also work on developmental neurobiology with the <a href="https://orthogonal-research.weebly.com/">Orthogonal Research and Education Laboratory</a>.</p>
 
-        <ul class="links">
-          <li><a href="mailto:morgan.hough@gmail.com">morgan.hough@gmail.com</a></li>
-          <li><a href="https://orcid.org/0000-0001-5256-413X">ORCID</a></li>
-          <li><a href="https://scholar.google.com/citations?user=DuZSXu8AAAAJ">Google Scholar</a></li>
-          <li><a href="https://www.linkedin.com/in/morgan-g-hough">LinkedIn</a></li>
-          <li><a href="https://bsky.app/profile/mhough.bsky.social">Bluesky</a></li>
-          <li><a href="https://huggingface.co/mhough">Hugging Face</a></li>
-          <li><a href="https://center17.org/">center17.org</a></li>
-        </ul>
-      </header>
+          <p>I recently co-authored <a href="https://doi.org/10.1098/rsta.2025.0007">A &lsquo;good&rsquo; regulator may provide a world model for intelligent systems</a> with Bradly Alicea, Amanda Nelson and Jesse Parent, in <em>Philosophical Transactions of the Royal Society A</em> (2026).</p>
 
-      <section>
-        <p>I work on noninvasive neuroimaging and neuromodulation, and on the open-source software that makes them reproducible. My background is in structural, diffusion, perfusion and functional MRI analysis at the Oxford FMRIB Analysis Group, King's College London, and UCSF, with earlier work in high-density EEG systems engineering. Current projects span developmental neurobiology, active inference, open lab hardware, and scientific packaging for Fedora.</p>
+          <p>I write Spinning Up curricula, each a runnable repository:
+            <a href="https://github.com/m9h/spinning-up-alf">active inference</a>,
+            <a href="https://github.com/m9h/spinning-up-in-pde">PDE solvers</a>,
+            <a href="https://github.com/m9h/spinning-up-in-mech-interp">mechanistic interpretability</a>,
+            and <a href="https://github.com/m9h/spinning-up-in-openscope">OpenScope</a>.</p>
 
-        <h2>Recent paper</h2>
+          <p>My open-source work with OREL includes
+            <a href="https://github.com/m9h/controls-and-trajectories">controls-and-trajectories</a>,
+            <a href="https://github.com/m9h/tri-lens">tri-lens</a>,
+            <a href="https://github.com/m9h/neurosim">neurosim</a>
+            and <a href="https://github.com/m9h/SustainHub-jaxmarl">SustainHub-jaxmarl</a>.
+            With OpenWorm's DevoWorm group:
+            <a href="https://github.com/m9h/hgx">hgx</a>,
+            <a href="https://github.com/m9h/devograph">devograph</a>
+            and <a href="https://github.com/m9h/biohub-starter">biohub-starter</a>.
+            With Biopunk Lab:
+            <a href="https://github.com/m9h/anatomical-compiler">anatomical-compiler</a>,
+            <a href="https://github.com/m9h/biopunk-bioreactor">biopunk-bioreactor</a>,
+            <a href="https://github.com/m9h/biopunk-jubilee">biopunk-jubilee</a>,
+            <a href="https://github.com/m9h/biopunk-duckweed">biopunk-duckweed</a>,
+            <a href="https://github.com/m9h/biopunk-artbot">biopunk-artbot</a>,
+            <a href="https://github.com/m9h/biopunk-display">biopunk-display</a>,
+            <a href="https://github.com/m9h/chimerax-vampnet">chimerax-vampnet</a>
+            and <a href="https://github.com/m9h/chimerax-origami">chimerax-origami</a>.</p>
 
-        <p>Alicea, B., <strong>Hough, M.</strong>, Nelson, A., &amp; Parent, J. (2026). <a href="https://doi.org/10.1098/rsta.2025.0007">A &lsquo;good&rsquo; regulator may provide a world model for intelligent systems</a>. <em>Philosophical Transactions of the Royal Society A</em>, 384(2320), 20250007. Part of the theme issue on world models in natural and artificial intelligence. Preprint: <a href="https://arxiv.org/abs/2506.23032">arXiv:2506.23032</a>.</p>
+          <p>I previously worked in the Analysis Group at Oxford's FMRIB Centre, at the Institute of Psychiatry at King's College London, in the Departments of Neurology and Radiology at UCSF, and as a software engineering manager at Electrical Geodesics. More on the <a href="cv.html">CV</a>.</p>
+        </div>
 
-        <h2>Current roles</h2>
-
-        <ul>
-          <li><strong>Developmental Neurobiology</strong>, <a href="https://orthogonal-research.weebly.com/">Orthogonal Research and Education Laboratory</a> (OREL)</li>
-          <li><strong>Executive Director</strong>, <a href="https://neurotechx.com/">NeuroTechX</a></li>
-          <li><strong>Director and Principal Scientist</strong>, Cellsius, DBA Biopunk Lab, a 501(c)(3) research institute</li>
-          <li><strong>Co-Founder and Co-Lead (Inner Minds)</strong>, OtherMinds Lab, San Francisco</li>
-          <li><strong>Neurotech Lead</strong>, <a href="https://berlinhouse.com/">Frontier Tower</a>, San Francisco</li>
-          <li><strong>Maintainer</strong>, <a href="https://docs.fedoraproject.org/en-US/neurofedora/overview/">NeuroFedora</a> Special Interest Group, Fedora Project</li>
-          <li><strong>Lead Developer</strong>, dmipy-jax, differentiable multi-compartment diffusion MRI modeling</li>
-        </ul>
-
-        <h2>Spinning Up</h2>
-
-        <p>Module-by-module curricula, each a runnable repository.</p>
-
-        <ul>
-          <li><a href="https://github.com/m9h/spinning-up-alf">spinning-up-alf</a> &mdash; Spinning Up in Active Inference: 16 modules bridging reinforcement learning and active inference in JAX. Companion library: <a href="https://github.com/m9h/alf">alf</a>.</li>
-          <li><a href="https://github.com/m9h/spinning-up-in-pde">spinning-up-in-pde</a> &mdash; Spinning Up in PDE Solvers: from finite differences to neural operators.</li>
-          <li><a href="https://github.com/m9h/spinning-up-in-mech-interp">spinning-up-in-mech-interp</a> &mdash; Spinning Up in Mechanistic Interpretability: a controls-first, open-weights curriculum from vision circuits to the global workspace.</li>
-          <li><a href="https://github.com/m9h/spinning-up-in-openscope">spinning-up-in-openscope</a> &mdash; Onboarding guide for the OpenScope Community Predictive-Processing project.</li>
-        </ul>
-
-        <h2>Orthogonal Research and Education Laboratory</h2>
-
-        <ul>
-          <li><a href="https://github.com/m9h/controls-and-trajectories">controls-and-trajectories</a> &mdash; The null distributions and developmental trajectories that interpretability papers rely on but rarely ship.</li>
-          <li><a href="https://github.com/m9h/tri-lens">tri-lens</a> &mdash; Do three interpretability instruments agree about the same activation? Jacobian lens, NLA and SAE, with mismatch nulls and steering as ground truth.</li>
-          <li><a href="https://github.com/m9h/neurosim">neurosim</a> &mdash; NeuroSim: a JAX-native software stack for cognitive agent simulation.</li>
-          <li><a href="https://github.com/m9h/SustainHub-jaxmarl">SustainHub-jaxmarl</a> &mdash; Pure-JAX multi-agent RL replication of the SustainHub open-source sustainability simulation (GSoC 2025).</li>
-        </ul>
-
-        <h2>OpenWorm / DevoWorm</h2>
-
-        <ul>
-          <li><a href="https://github.com/m9h/hgx">hgx</a> &mdash; Hypergraph neural networks in JAX/Equinox; started for the DevoWorm DevoGraph project (GSoC 2026).</li>
-          <li><a href="https://github.com/m9h/devograph">devograph</a> &mdash; Developmental neurobiology extensions for hgx: dynamics, geometric convolutions, optimal transport, and <em>C. elegans</em> tooling.</li>
-          <li><a href="https://github.com/m9h/biohub-starter">biohub-starter</a> &mdash; Starter kit for the Biohub cell-tracking-during-development competition, with embryo-disjoint validation and negative results.</li>
-        </ul>
-
-        <h2>Biopunk Lab</h2>
-
-        <ul>
-          <li><a href="https://github.com/m9h/anatomical-compiler">anatomical-compiler</a> &mdash; Engineering fully-biologic tissue systems: a hypergraph instrument for synthetic morphology, toward Levin's anatomical compiler.</li>
-          <li><a href="https://github.com/m9h/biopunk-bioreactor">biopunk-bioreactor</a> &mdash; An evidence-based review of open-source continuous-culture bioreactors, with corrections and a two-instrument build proposal.</li>
-          <li><a href="https://github.com/m9h/biopunk-jubilee">biopunk-jubilee</a> &mdash; Closing the verification gap in Science Jubilee with physical-digital assertions and three sensors.</li>
-          <li><a href="https://github.com/m9h/biopunk-duckweed">biopunk-duckweed</a> &mdash; A DuckBot / OECD 221 duckweed bioassay pilot for Lake Wylie.</li>
-          <li><a href="https://github.com/m9h/biopunk-artbot">biopunk-artbot</a> &mdash; Opentrons OT-2, bioprinter and flipdot display: pixel art to living bacterial art.</li>
-          <li><a href="https://github.com/m9h/biopunk-display">biopunk-display</a> &mdash; Flipdot display server on a Raspberry Pi 4.</li>
-          <li><a href="https://github.com/m9h/chimerax-vampnet">chimerax-vampnet</a> &mdash; VAMPnet and Markov state modeling of protein conformational landscapes inside UCSF ChimeraX.</li>
-          <li><a href="https://github.com/m9h/chimerax-origami">chimerax-origami</a> &mdash; Off-target-aware DNA-origami sequence design and lipid-envelope modeling in ChimeraX.</li>
-        </ul>
-
-        <h2>Previous appointments</h2>
-
-        <ul>
-          <li>Research Fellow, Centre for Neuroimaging Sciences, Institute of Psychiatry, King's College London</li>
-          <li>Neuroimaging Researcher, Analysis Group, FMRIB Centre, University of Oxford</li>
-          <li>Research Specialist and Lab Manager, Departments of Neurology and Radiology, UCSF</li>
-          <li>Research Associate, Smith-Kettlewell Eye Research Institute</li>
-          <li>Software Engineering Manager, Electrical Geodesics, Inc. (high-density EEG systems)</li>
-        </ul>
-
-        <h2>Education</h2>
-
-        <ul>
-          <li>DPhil candidate, Clinical Neurology and Neuroimaging, FMRIB Centre, University of Oxford</li>
-          <li>B.A., Psychology and Biochemistry &amp; Molecular Biology, Reed College</li>
-          <li>B.A., Liberal Arts, St. John's College</li>
-        </ul>
-
-        <h2>Selected publications</h2>
-
-        <p>From 46+ peer-reviewed publications. Full list on <a href="https://scholar.google.com/citations?user=DuZSXu8AAAAJ">Google Scholar</a> and <a href="https://orcid.org/0000-0001-5256-413X">ORCID</a>.</p>
-
-        <ol>
-          <li>Alicea, B., <strong>Hough, M.</strong>, Nelson, A., &amp; Parent, J. (2026). <a href="https://doi.org/10.1098/rsta.2025.0007">A &lsquo;good&rsquo; regulator may provide a world model for intelligent systems</a>. <em>Phil. Trans. R. Soc. A</em>, 384(2320), 20250007.</li>
-          <li>Alicea, B., <strong>Hough, M.</strong>, Nelson, A., &amp; Parent, J. (2025). <a href="https://doi.org/10.31234/osf.io/mnhux_v1">A brief history of cybernetic imperatives and behavior</a>. Preprint.</li>
-          <li>Alicea, B., &amp; <strong>Hough, M.</strong> (2025). <a href="https://doi.org/10.31219/osf.io/wbv6h_v1">The augmentation of intelligent agents for human-machine superperformance</a>. Preprint.</li>
-          <li>Ronan, L., Voets, N., Robb, C., Giedd, J., <strong>Hough, M.</strong>, Mackay, C., Bullmore, E., James, A., &amp; Fletcher, P. C. (2014). <a href="https://doi.org/10.1093/cercor/bht082">Differential tangential expansion as a mechanism for cortical gyrification</a>. <em>Cerebral Cortex</em>, 24(8), 2219&ndash;2228.</li>
-          <li>Zarei, M., Ibarretxe-Bilbao, N., Compta, Y., <strong>Hough, M.</strong>, Junque, C., Bargallo, N., Tolosa, E., &amp; Marti, M. J. (2013). <a href="https://doi.org/10.1136/jnnp-2012-304126">Cortical thinning is associated with disease stages and dementia in Parkinson's disease</a>. <em>J. Neurol. Neurosurg. Psychiatry</em>, 84(8), 875&ndash;881.</li>
-          <li>James, A., <strong>Hough, M.</strong>, James, S., Winmill, L., Burge, L., Nijhawan, S., Matthews, P. M., &amp; Zarei, M. (2011). <a href="https://doi.org/10.1016/j.schres.2011.02.014">Greater white and grey matter changes associated with early cannabis use in adolescent-onset schizophrenia</a>. <em>Schizophrenia Research</em>, 128(1&ndash;3), 91&ndash;97.</li>
-          <li>Filippini, N., MacIntosh, B. J., <strong>Hough, M. G.</strong>, et al. (2009). <a href="https://doi.org/10.1073/pnas.0811879106">Distinct patterns of brain activity in young carriers of the APOE-&epsilon;4 allele</a>. <em>PNAS</em>, 106(17), 7209&ndash;7214.</li>
-          <li>Voets, N. L., <strong>Hough, M.</strong>, Douaud, G., Matthews, P. M., James, A., Winmill, L., Webster, P., &amp; Smith, S. (2008). <a href="https://doi.org/10.1016/j.neuroimage.2008.08.013">Evidence for abnormalities of cortical development in adolescent-onset schizophrenia</a>. <em>NeuroImage</em>, 43(4), 665&ndash;675.</li>
-        </ol>
-      </section>
-
-      <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+        <footer>
+          <div>&copy; 2026 Morgan G. Hough.</div>
+          <div class="icons">
+            <a href="mailto:morgan.hough@gmail.com"><span class="sr-only">mail</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg></a>
+            <a href="https://github.com/m9h"><span class="sr-only">github</span><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg></a>
+            <a href="https://www.linkedin.com/in/morgan-g-hough"><span class="sr-only">linkedin</span><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg></a>
+          </div>
+        </footer>
+      </main>
     </div>
-    <script src="assets/js/scale.fix.js"></script>
   </body>
 </html>
